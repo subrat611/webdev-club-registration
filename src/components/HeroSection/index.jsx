@@ -1,6 +1,6 @@
 import "./herosection.scss";
 
-export default function HeroSection() {
+export default function HeroSection({ scrollToSection }) {
   return (
     <div className="hero-wrapper">
       <div className="hero-inner-wrapper">
@@ -18,7 +18,9 @@ export default function HeroSection() {
           <br />
           <span className="hero-desc">It is never too late to start...</span>
         </div>
-        <button className="hero-action-btn">join the club</button>
+        <button className="hero-action-btn" onClick={scrollToSection}>
+          join the club
+        </button>
       </div>
     </div>
   );
