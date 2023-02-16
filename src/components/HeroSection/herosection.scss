@@ -1,0 +1,54 @@
+@use '../../scss/colors' as *;
+@use '../../scss/fonts' as *; 
+
+.hero-wrapper {
+    height: 100vh;
+    display: flex;
+    // background-image: url(../../assets/hero-bg.jpg);
+    // background-position: center center;
+    // background-size: cover;
+    justify-content: center;
+
+    .hero-inner-wrapper {
+        width: 1440px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+
+        .hero-title {
+            font-size: 5rem;
+            font-family: $font-VT;
+            text-transform: uppercase;
+            line-height: 5.8rem;
+
+            .hero-title-bg-style {
+                background-color: #b2ff9e;
+                padding: 0 1rem;
+            }
+        }
+
+        .hero-desc {
+            font-family: $font-VT;
+            font-size: 2rem;
+            line-height: 4.2rem;
+        }
+
+        .hero-action-btn {
+            outline: none;
+            background: none;
+            border: none;
+            margin-top: 5rem;
+            padding: 1rem 1.1rem;
+            font-size: 1.5rem;
+            font-family: $font-VT;
+            background-color: #1f2421;
+            color: #ffffff;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+    }
+}
