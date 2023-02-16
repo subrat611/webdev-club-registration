@@ -1,0 +1,19 @@
+@use '../../scss/colors' as *;
+@use '../../scss/fonts' as *; 
+
+.navbar-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $nav-color;
+    padding: 1.2rem 0;
+    color: #ffffff;
+    
+    .nav-logo {
+        margin: 0;
+        font-size: 2rem;
+        font-family: $font-major;
+        letter-spacing: 0.1em;
+    }
+}
