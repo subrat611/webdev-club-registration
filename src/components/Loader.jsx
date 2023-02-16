@@ -3,7 +3,7 @@ export default function Loader() {
     <div className="loader-wrapper">
       <p className="loader-title">
         Welcome to <br />
-        <span className="title-style-bg">OPJU Web Developer Club</span>
+        <span className="title-style-bg">OPJU Web Developers Club</span>
       </p>
       <div class="socket">
         <div class="gel center-gel">
