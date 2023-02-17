@@ -4,20 +4,23 @@ import FormStatus from "../FormStatus";
 
 import "./register.scss";
 
+const clubs = ["AI/ML development", "Android development", "Web development"];
+
 export default function Register() {
   const [devName, setDevName] = useState("");
   const [devEmail, setDevEmail] = useState("");
   const [devContact, setDevContact] = useState("");
+  const [devClub, setDevClub] = useState("");
   const [formStatus, setFormStatus] = useState(null);
 
   useEffect(() => {
     validateDetails();
   }, []);
 
-  async function registerUser(name, email, contact) {
+  async function registerUser(name, email, contact, club) {
     const { data, error } = await supabase
       .from("registration")
-      .insert([{ name: name, email: email, phone: contact }]);
+      .insert([{ name: name, email: email, phone: contact, club: club }]);
 
     if (!error) {
       setFormStatus(true);
@@ -25,19 +28,26 @@ export default function Register() {
       setDevName("");
       setDevEmail("");
       setDevContact("");
+      setDevClub("");
     } else {
       setFormStatus(false);
       resetFormStatus();
       setDevName("");
       setDevEmail("");
       setDevContact("");
+      setDevClub("");
     }
   }
 
   function validateDetails() {
-    if (devName !== "" && devEmail !== "" && devContact !== "") {
+    if (
+      devName !== "" &&
+      devEmail !== "" &&
+      devContact !== "" &&
+      devClub !== ""
+    ) {
       let contact = Number(devContact); // string ---> number
-      registerUser(devName, devEmail, contact);
+      registerUser(devName, devEmail, contact, devClub);
     }
   }
 
@@ -70,6 +80,21 @@ export default function Register() {
               value={devName}
               onChange={(e) => setDevName(e.target.value)}
             />
+          </div>
+          <div className="register-input">
+            <label htmlFor="selectClub">Select club</label>
+            <select
+              id="selectClub"
+              value={devClub}
+              onChange={(e) => setDevClub(e.target.value)}
+            >
+              <option>Choose your club</option>
+              {clubs.map((club, key) => (
+                <option value={club} key={key}>
+                  {club}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="register-input">
             <label htmlFor="inputEmail">Email</label>
