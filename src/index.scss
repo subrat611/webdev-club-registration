@@ -391,6 +391,27 @@ a {
       
 }
 
+
+@media all and (max-width: '375px') {
+  .loader-wrapper {
+
+    position: relative;
+
+    .loader-title {
+      font-size: 1.7rem;
+      line-height: 1.3em;
+      letter-spacing: 0.11em;
+      
+      .title-style-bg {
+        padding: 0 0.5rem;
+      }
+
+    }
+  }
+}
+
+
 .App {
     position: relative;
 }
+
