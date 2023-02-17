@@ -8,8 +8,9 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
-    }, 2500);
+    }, 2000);
   }, []);
+
   return <div className="App">{loader ? <Loader /> : <HomePage />}</div>;
 }
 
