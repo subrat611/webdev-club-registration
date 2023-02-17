@@ -1,0 +1,59 @@
+@use '../../scss/colors' as *;
+@use '../../scss/fonts' as *; 
+
+
+.guideline-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 5rem 0;
+
+    .guideline-container {
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-VT;
+        text-transform: uppercase;
+        
+        .guideline-title {
+            font-size: 4rem;
+            text-align: center;
+
+            .guideline-title-style {
+                background-color: #b2ff9e;
+                padding: 0 0.5rem;
+            }
+        }
+
+        .guideline-lists {
+            max-width: 60%;
+            min-width: 250px;
+            .guideline-list {
+                font-size: 2rem;
+                list-style: decimal-leading-zero;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+@media all and (max-width: '375px') {
+    .guideline-wrapper {
+        .guideline-container {
+            .guideline-title {
+                font-size: 2.5rem;
+            }
+
+            .guideline-lists {
+                min-width: 80%;
+
+                .guideline-list {
+                    font-size: 1.6rem;
+                    list-style: decimal-leading-zero;
+                    margin: 1.2rem 0;
+                }
+            }
+        }
+    }
+}

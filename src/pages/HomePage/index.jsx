@@ -1,5 +1,6 @@
-import HeroSection from "../../components/HeroSection";
 import NavBar from "../../components/NavBar";
+import HeroSection from "../../components/HeroSection";
+import GuideLines from "../../components/GuideLines";
 import Register from "../../components/Register";
 
 export default function HomePage() {
@@ -16,8 +17,9 @@ export default function HomePage() {
       <NavBar />
       <HeroSection scrollToSection={scrollToSection} />
       <div id="reg-form">
-        <Register />
+        <GuideLines />
       </div>
+      <Register />
     </div>
   );
 }
