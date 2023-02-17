@@ -4,23 +4,36 @@ import FormStatus from "../FormStatus";
 
 import "./register.scss";
 
-const clubs = ["AI/ML development", "Android development", "Web development"];
+const clubs = [
+  "AI/ML development",
+  "Android development",
+  "Web development",
+  "Other",
+];
 
 export default function Register() {
   const [devName, setDevName] = useState("");
   const [devEmail, setDevEmail] = useState("");
   const [devContact, setDevContact] = useState("");
   const [devClub, setDevClub] = useState("");
+  const [otherField, setOtherField] = useState("");
+  const [showOtherField, setShowOtherField] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
 
   useEffect(() => {
     validateDetails();
   }, []);
 
-  async function registerUser(name, email, contact, club) {
-    const { data, error } = await supabase
-      .from("registration")
-      .insert([{ name: name, email: email, phone: contact, club: club }]);
+  async function registerUser(name, email, contact, club, otherField) {
+    const { data, error } = await supabase.from("registration").insert([
+      {
+        name: name,
+        email: email,
+        phone: contact,
+        club: club,
+        other: otherField,
+      },
+    ]);
 
     if (!error) {
       setFormStatus(true);
@@ -29,6 +42,7 @@ export default function Register() {
       setDevEmail("");
       setDevContact("");
       setDevClub("");
+      setOtherField("");
     } else {
       setFormStatus(false);
       resetFormStatus();
@@ -36,6 +50,7 @@ export default function Register() {
       setDevEmail("");
       setDevContact("");
       setDevClub("");
+      setOtherField("");
     }
   }
 
@@ -47,7 +62,7 @@ export default function Register() {
       devClub !== ""
     ) {
       let contact = Number(devContact); // string ---> number
-      registerUser(devName, devEmail, contact, devClub);
+      registerUser(devName, devEmail, contact, devClub, otherField);
     }
   }
 
@@ -86,7 +101,12 @@ export default function Register() {
             <select
               id="selectClub"
               value={devClub}
-              onChange={(e) => setDevClub(e.target.value)}
+              onChange={(e) => {
+                setDevClub(e.target.value);
+                e.target.value === "Other"
+                  ? setShowOtherField(true)
+                  : setShowOtherField(false);
+              }}
             >
               <option>Choose your club</option>
               {clubs.map((club, key) => (
@@ -96,6 +116,18 @@ export default function Register() {
               ))}
             </select>
           </div>
+          {showOtherField ? (
+            <div className="register-input">
+              <label htmlFor="inputOtherField">Other</label>
+              <input
+                id="inputOtherField"
+                placeholder="Enter Your domain"
+                type="text"
+                value={otherField}
+                onChange={(e) => setOtherField(e.target.value)}
+              />
+            </div>
+          ) : null}
           <div className="register-input">
             <label htmlFor="inputEmail">Email</label>
             <input

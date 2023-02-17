@@ -14,12 +14,10 @@ export default function GuideLines() {
             junior.
           </li>
           <li className="guideline-list">
-            If you know more than others then share your knowledge rather than
-            disrespect them.
+            If you have more knowledge in your domain then share it with other members rather than overshadowing them. 
           </li>
           <li className="guideline-list">
-            If you register then you must have to attend the activities
-            conducted inside the club.
+            If you register, then you must have to attend all the activities that will be conducted in your respected club.
           </li>
         </ul>
       </div>
