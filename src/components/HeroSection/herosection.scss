@@ -11,30 +11,36 @@
 
     .hero-inner-wrapper {
         width: 1440px;
-        height: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-size: cover;
 
-        .hero-title {
-            font-size: 5rem;
-            font-family: $font-VT;
-            text-transform: uppercase;
-            line-height: 5.8rem;
+        .hero-title-container {
+            // text-align: center;
 
+            .hero-title {
+                font-size: 5rem;
+                font-family: $font-VT;
+                text-transform: uppercase;
+                line-height: 5.8rem;
+    
+            }
+    
             .hero-title-bg-style {
                 background-color: #b2ff9e;
                 padding: 0 1rem;
             }
+    
+            .hero-desc {
+                font-family: $font-VT;
+                font-size: 2rem;
+                line-height: 4.2rem;
+            }
         }
 
-        .hero-desc {
-            font-family: $font-VT;
-            font-size: 2rem;
-            line-height: 4.2rem;
-        }
 
         .hero-action-btn {
             outline: none;
