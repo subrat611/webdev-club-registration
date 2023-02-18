@@ -29,8 +29,8 @@ export default function WhyJoinClub() {
             <img src={GrowIcon} alt="learn-icon" />
             <span className="list-title">Grow</span>
             <p className="list-desc">
-              Apply your knowledge to get internship, contribute to other
-              members projects, participate hackathon.
+              Apply your knowledge to get internship, contribute to projects and
+              participate in hackathon.
             </p>
           </div>
         </div>
