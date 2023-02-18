@@ -1,5 +1,6 @@
 import NavBar from "../../components/NavBar";
 import HeroSection from "../../components/HeroSection";
+import WhyJoinClub from "../../components/WhyJoinClub";
 import GuideLines from "../../components/GuideLines";
 import Register from "../../components/Register";
 
@@ -16,6 +17,7 @@ export default function HomePage() {
     <div className="homepage-wrapper">
       <NavBar />
       <HeroSection scrollToSection={scrollToSection} />
+      <WhyJoinClub />
       <div id="reg-form">
         <GuideLines />
       </div>
